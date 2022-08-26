@@ -1,0 +1,55 @@
+Problem#1:
+ select MEMBER_ID,MEMBER_NAME,CITY,MEMBERSHIP_STATUS from LMS_MEMBERS where MEMBERSHIP_STATUS = 'Permanent';
+
+Problem#2:
+ select lms.MEMBER_ID,lms.MEMBER_NAME from LMS_MEMBERS lms join LMS_BOOK_ISSUE lbi on lms.MEMBER_ID = lbi.MEMBER_ID where lbi.BOOK_ISSUE_STATUS = 'N';
+
+Problem#3:
+ select lms.MEMBER_ID,lms.MEMBER_NAME from LMS_MEMBERS lms join LMS_BOOK_ISSUE lbi on lms.MEMBER_ID = lbi.MEMBER_ID where lbi.BOOK_CODE = 'BL000002';
+
+Problem#4:
+ select BOOK_CODE,BOOK_TITLE,AUTHOR from LMS_BOOK_DETAILS where AUTHOR LIKE 'P%';
+
+Problem#5:
+ select count(*) as 'NO_OF_BOOK' from LMS_BOOK_DETAILS where CATEGORY = 'JAVA';
+
+Problem#6:
+ select CATEGORY,count(*) as 'NO_OF_BOOKS from LMS_BOOK_DETAILS group by CATEGORY;
+
+Problem#7:
+ select count(*) as 'NO_OF_BOOKS' from LMS_BOOKS_DETAILS where PUBLICATION = 'Prentice Hall';
+
+Problem#8:
+ select lbd.BOOK_CODE,lbd.BOOK_TITLE from LMS_BOOK_DETAILS lbd inner join LMS_BOOK_ISSUE lbi on lbd.BOOK_CODE = lbi.BOOK_CODE where lbi.DATE_ISSUE = TO_DATE('01-04-2012','DD-MM-YYYY');
+
+Problem#9:
+ select MEMBER_ID,MEMBER_NAME,DATE_REGISTER,DATE_EXPIRE from LMS_MEMBERS where DATE_EXPIRE<TO_DATE('APR 2013','MON YYYY');
+
+Problem#10:
+ select MEMBER_ID,MEMBER_NAME,DATE_REGISTER,MEMBERSHIP_STATUS from LMS_MEMBERS where DATE_REGISTER<TO_DATE('MARCH 2012','MONTH YYYY') and MEMBERSHIP_STATUS = 'Temporary';
+
+Problem#11:
+ select MEMBER_ID,initcap(MEMBER_NAME) as 'NAME' from LMS_MEMBERS where city in ('CHENNAI','DELHI');
+
+Problem#12:
+ select unique concat(BOOK_TITLE,concat('IS WRITTEN BY',AUTHOR)) as 'BOOK_WRITTEN_BY' from LMS_BOOK_DETAILS;
+
+Problem#13:
+ select avg(PRICE) as 'AVERAGEPRICE' from LMS_BOOK_DETAILS where CATEGORY = 'JAVA';
+
+Problem#14:
+ select SUPPLIER_ID,SUPPLIER_NAME,EMAIL from LMS_SUPPLIERS_DETAILS where EMAIL like '%gmail%';
+
+Problem#15:
+ select SUPPLIER_ID,SUPPLIER_NAME coalesce(CONTACT,EMAIL,ADDRESS) as 'CONTACT_DETAILS' from LMS_SUPPLIER_DETAILS;
+
+Problem#16:
+ select SUPPLIER_ID,SUPPLIER_NAME,CONTACT,NVL2(CONTACT,'YES','NO') as 'PHONE_NUMBER_AVAILABLE' from LMS_SUPPLIER_DETAILS;
+
+AVERAGE QUESTIONS:::::
+
+
+
+
+
+
